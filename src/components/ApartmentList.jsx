@@ -1,5 +1,6 @@
 import React from 'react';
 import apartments from '../app/apartments.json';
+import Accordion from './Accordion';
 
 function ApartmentListings({ startDate, endDate }) {
   return (
@@ -11,6 +12,9 @@ function ApartmentListings({ startDate, endDate }) {
             <h2 className="text-xl font-semibold">{apartment.title}</h2>
             <p className="text-gray-600">{apartment.description}</p>
             <p className="text-lg font-bold mt-2">${apartment.price} / Night</p>
+            <Accordion title="More Details">
+              <p>{apartment.details}</p>
+            </Accordion>
             <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">View Details</button>
           </div>
         </div>
